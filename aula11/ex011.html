@@ -14,10 +14,10 @@
     </div>
     <script>
         function verificar() {
-            var t = window.document.getElementById('texto')
+            var t = window.document.querySelector('input#texto')
             var res = window.document.getElementById('res')
             res.innerHTML = `<p>Você vive em ${t}</p>`
-            if (t == 'Brasil') {
+            if (t === 'Brasil') {
                 res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
             } else {
                 res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`
