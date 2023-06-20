@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aonde você vive?</title>
+</head>
+<body>
+    <h1>Aonde você vive?</h1>
+    <input type="text" name="texto" id="texto">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var t = window.document.getElementById('texto')
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Você vive em ${t}</p>`
+            if (t == 'Brasil') {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
