@@ -8,6 +8,7 @@ function verificar() {
     } else {
         var fsex = document.getElementsByName('radsex')[]
         var idade = ano - Number(fano.value)
+        res.innerHTML = `Idade calculada ${idade}`
     }
 
 }
