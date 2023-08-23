@@ -1,12 +1,20 @@
 let num = document.getElementById('inum')
 let res = document.getElementById('res')
 let lista = document.getElementById('ilista')
-array = []
+let array = []
+
+function inLista(n, l) {
+    if (l.indexOf(n) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
 
 function adicionar() {
     res.innerHTML = ''
-    n = Number(num.value)
-    if (n < 1 || n > 100 || n in array) {
+    let n = Number(num.value)
+    if (n < 1 || n > 100 || inLista(n, array)) {
         window.alert('Valor inválido ou já adicionado na lista!')
     } else {
         let item = document.createElement('option')
@@ -14,11 +22,13 @@ function adicionar() {
         lista.appendChild(item)
         array.push(n)
     }
+    num.value = ''
+    num.focus() // Deixa o cursor focado no objeto
     
 }
 
 function maior() {
-    m = 0
+    let m = array[0]
     for (let n in array) {
         if (array[n] > m) {
             m = array[n]
@@ -28,8 +38,10 @@ function maior() {
 }
 
 function menor() {
-    m = 101
     for (let n in array) {
+        if (array[0]) {
+            m = array[0]
+        }
         if (array[n] < m) {
             m = array[n]
         }
@@ -38,7 +50,7 @@ function menor() {
 }
 
 function somar() {
-    soma = 0
+    let soma = 0
     for (let n in array) {
         soma = soma + array[n]
     }
@@ -46,7 +58,7 @@ function somar() {
 }
 
 function media() {
-    soma = somar()
+    let soma = somar()
     m = soma / array.length
     return m
 }
